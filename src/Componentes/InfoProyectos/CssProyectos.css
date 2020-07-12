@@ -1,0 +1,466 @@
+.Contenedor {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 70px 1fr 0.8fr 60px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "nav nav slider nav2" "aside main slider nav2" "aside main slider nav2";
+}
+
+/* NAVEGACIÓN -------------------------------------------------------------------------*/
+
+.nav-proyectos {
+    grid-area: nav;
+    position: absolute;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 70px 1fr 0.8fr 60px;
+    grid-template-rows: 60px;
+    grid-template-areas: "nav-logo nav-menu . .";
+}
+
+.nav-logo-proyectos {
+    grid-area: nav-logo;
+    padding-top: 10px;
+    background-color: var(--azul);
+}
+
+.nav-logo-proyectos img {
+    display: inline-block;
+    width: 3em;
+    margin-left: 15px;
+}
+
+.logo-media {
+    display: none;
+}
+
+.nav-menu-proyectos {
+    grid-area: nav-menu;
+    display: flex;
+    padding-top: 10px;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-menu-proyectos a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--rojo);
+    font-weight: 600;
+}
+
+.nav-menu-proyectos a:hover {
+    color: var(--amarillo);
+    font-weight: 700;
+    background-color: var(--azul);
+    transition: 1.5s;
+}
+
+.nav-redes-proyectos {
+    display: none;
+}
+
+.nav-proyectos label {
+    display: none;
+    width: 35px;
+    padding: 15px;
+}
+
+/* MAIN ------------------------------------------------------------------------------------------*/
+
+.main-proyectos {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 8vw 1fr 8vw;
+    grid-template-rows: max-content 60vh max-content;
+    margin-bottom: 0;
+    color: var(--azul);
+}
+
+.main-titulo {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    color: var(--rojo);
+}
+
+.descrip {
+    grid-column: 2;
+    grid-row: 2;
+    padding-top: 2vw;
+}
+
+.main-proyectos p {
+    text-align: justify;
+}
+
+.grid-abajo {
+    grid-column: 2;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 2vw;
+}
+
+.link {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.link a {
+    margin-right: 15px;
+    color: grey;
+    text-decoration: none;
+}
+
+.link a:hover {
+    transform: scale(1.04);
+    color: var(--azul);
+}
+
+.programas {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.programas img {
+    height: 5vh;
+    margin: 5px;
+}
+
+/* SLIDER IMÁGENES ----------------------------------------------------------------------------*/
+
+section {
+    grid-area: slider;
+    position: relative;
+    z-index: 1;
+}
+
+.slider {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    list-style: none;
+}
+
+.slider img {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center center;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+.slider input[type="radio"]:checked~img {
+    opacity: 1;
+}
+
+.slider input[type="radio"] {
+    display: none;
+}
+
+.slider input[type="radio"]+label {
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: relative;
+    z-index: 50;
+    margin: 1vw;
+    margin-left: 5vh;
+    background-color: var(--azul);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider input[type="radio"]:checked~label {
+    background-color: var(--rojo);
+}
+
+/* ASIDE REDES ----------------------------------------------------------------------------- */
+
+.aside-redes-proyectos {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    background-color: var(--azul);
+}
+
+/* NAV PROYECTOS  ------------------------------------------------------------------------------------ */
+
+#nav2 {
+    grid-area: nav2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(3, max-content);
+    background-color: var(--azul);
+}
+
+.titulo {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.titulo h3 {
+    writing-mode: vertical-rl;
+    padding-bottom: 5px;
+}
+
+.titulo p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    writing-mode: vertical-rl;
+    font-size: 12pt;
+}
+
+#nav2 a img {
+    width: 1.5vw;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#nav2 a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.volver {
+    grid-row: 2;
+}
+
+.atras {
+    grid-row: 3;
+}
+
+.adelante {
+    grid-row: 4;
+}
+
+.volver:hover, .atras:hover {
+    padding-right: 3px;
+}
+
+.adelante:hover {
+    padding-left: 3px;
+}
+
+/* RESPONSIVE ----------------------------------------------------------------------------------- */
+
+@media (max-width:990px) {
+    .main-proyectos {
+        grid-template-columns: 1fr;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    /* SLIDER IMÁGENES */
+    .slider {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .slider input[type="radio"]+label {
+        margin: 1vw;
+        margin-left: 2vh;
+        margin-top: 3vh;
+    }
+}
+
+@media (max-width:845px) {
+    .Contenedor {
+        grid-template-columns: 1fr 0.8fr 50px;
+        grid-template-areas: "nav slider nav2" "main slider nav2" "main slider nav2";
+    }
+    /* NAV */
+    .nav-menu-proyectos-contenedor {
+        display: none;
+    }
+    .nav-proyectos label {
+        display: block;
+        cursor: pointer;
+        padding-right: 50px;
+        background-color: var(--azul);
+    }
+    .nav-menu-proyectos {
+        min-width: 150px;
+        position: absolute;
+        padding-top: 0;
+        top: 3vh;
+        left: 7vw;
+        ;
+        flex-direction: column;
+        transition: all 0.3s;
+        background-color: var(--rojo);
+    }
+    .nav-menu-proyectos a {
+        color: white;
+    }
+    /* MAIN */
+    .main-titulo>h1 {
+        padding-top: 15px;
+        font-size: 18pt;
+    }
+    .grid-abajo {
+        grid-template-columns: 1fr;
+        margin-top: 5vh;
+    }
+    .programas {
+        display: none;
+    }
+    /* ASIDE REDES */
+    .aside-redes-proyectos {
+        display: none;
+    }
+}
+
+@media (max-width:760px) {
+    .Contenedor {
+        grid-template-columns: 0.8fr;
+        grid-template-rows: 60px 1fr;
+        grid-template-areas: "nav slider" "main slider";
+    }
+    /* MAIN */
+    .main-titulo>h1 {
+        font-size: 16pt;
+    }
+    .main-proyectos p {
+        text-align: left;
+    }
+    /* NAV PROYECTOS */
+    #nav2 {
+        grid-template-columns: repeat(3, max-content);
+        grid-template-rows: max-content;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+    }
+    #nav2 a {
+        padding-right: 15px;
+        padding-left: 15px;
+        border-top: none;
+        border-left: 0.5px solid rgba(255, 255, 255, 0.5);
+    }
+    .titulo {
+        display: none;
+    }
+    #nav2 a img {
+        width: 2.5vh;
+    }
+    .volver {
+        grid-column: 1;
+        grid-row: 1
+    }
+    .atras {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .adelante {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .volver:hover, .atras:hover, .adelante:hover {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width:660px) {
+    .Contenedor {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px max-content 93vh 50px;
+        grid-template-areas: "nav" "main" "slider" "nav2";
+    }
+    .nav-menu-proyectos {
+        left: 12vw;
+    }
+    /* MAIN */
+    .main-proyectos {
+        grid-template-rows: max-content max-content max-content;
+    }
+    .main-titulo {
+        padding-top: 5vh;
+    }
+    .descrip {
+        padding-bottom: 6vh;
+    }
+    /* SLIDER IMÁGENES */
+    .slider img {
+        height: 93vh;
+    }
+    /* NAV PROYECTOS */
+    #nav2 {
+        grid-template-columns: 1fr repeat(3, max-content);
+        grid-template-rows: max-content;
+        position: relative;
+    }
+    .titulo {
+        grid-column: 1;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+    }
+    .titulo h3 {
+        writing-mode: horizontal-tb;
+        padding-bottom: 0;
+        font-size: 10pt;
+    }
+    .titulo p {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+        writing-mode: horizontal-tb;
+        font-size: 10pt;
+    }
+    .volver {
+        grid-column: 2;
+        grid-row: 1
+    }
+    .atras {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .adelante {
+        grid-column: 4;
+        grid-row: 1;
+    }
+}
+
+@media (max-width:450px) {
+    /* MAIN */
+    .main-titulo h1 {
+        font-size: 14pt;
+    }
+    /* NAV PROYECTOS */
+    .titulo>p {
+        display: none;
+    }
+    .titulo>h3 {
+        font-size: 9pt;
+    }
+}

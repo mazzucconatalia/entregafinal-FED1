@@ -1,0 +1,17 @@
+:root {
+  --azul: #3E4A64;
+  --rojo: #A95E5D;
+  --amarillo: #FFC29B;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10pt;
+}
+

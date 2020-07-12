@@ -1,0 +1,333 @@
+/* PÁGINA ADMIN -------------------------------------------------------------------------------------- */
+
+.contenedor-admin {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 50px 0.5fr 1fr 1fr;
+    grid-template-columns: 1fr 25vw 25vw;
+    grid-template-areas: ". . ." "Calendario listaTareas titulo " "Calendario listaTareas comentarios" "Calendario listaTareas comentarios";
+    gap: 7px;
+    padding: 20px;
+}
+
+.contenedor-titulo {
+    grid-area: titulo;
+    background-color: rgba(62, 74, 100, 1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-admin h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    text-align: center;
+    line-height: 14pt;
+    padding-bottom: 5px;
+}
+
+.contenedor-admin h3 {
+    color: white;
+    font-weight: 400;
+}
+
+.contenedor-admin p {
+    color: var(--azul);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* CALENDARIO ------------------------------------------------------------------------------------------ */
+
+.contenedor-calendario {
+    grid-area: Calendario;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(62, 74, 100, 0.5);
+    z-index: 0;
+}
+
+.rbc-header {
+    color: var(--azul) !important;
+}
+
+.rbc-event {
+    background-color: var(--azul) !important;
+    padding: 3px !important;
+    padding-left: 10px !important;
+    margin-top: 4px !important;
+}
+
+.rbc-toolbar-label {
+    color: var(--azul) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.rbc-day-bg {
+    background-color: rgba(219, 200, 200, 0.438);
+}
+
+.rbc-today {
+    background-color: rgba(248, 242, 240, 0.8) !important;
+}
+
+.rbc-date-cell {
+    color: var(--rojo);
+}
+
+.rbc-active {
+    border: none;
+}
+
+.rbc-off-range-bg {
+    background-color: rgba(212, 192, 192, 0.815) !important;
+}
+
+.Toastify__toast-container {
+    width: 30vw;
+}
+
+.rbc-btn-group button {
+    color: var(--azul) !important;
+}
+
+.Toastify__toast {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    min-height: 110px;
+    line-height: 13pt;
+}
+
+.rbc-header+.rbc-header {
+    border: var(--azul) !important;
+}
+
+/* LISTA DE TAREAS  --------------------------------------------------------------------------- */
+
+.contenedor-lista-tareas {
+    grid-area: listaTareas;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(62, 74, 100, 0.7);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 16vh 1fr;
+    grid-template-areas: "titulo" "tareas";
+}
+
+.titulo-tareas {
+    grid-area: titulo;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.titulo-tareas h3 {
+    color: white;
+    text-align: center;
+    grid-column: span 2;
+    margin: 8px;
+    font-weight: 600;
+}
+
+.titulo-tareas h4 {
+    background-color: var(--azul);
+    border-radius: 4px;
+    margin: 2px;
+    padding-top: 4px;
+    text-align: center;
+    color: white;
+    font-size: 12pt;
+    font-weight: 500;
+    grid-column: span 2;
+    margin-bottom: 5px;
+}
+
+.titulo-tareas p {
+    background-color: rgba(235, 235, 235, 0.3);
+    border-radius: 4px;
+    margin: 2px;
+    padding-top: 2px;
+}
+
+.lista-tareas {
+    grid-area: tareas;
+    margin-top: 10px;
+}
+
+.lista-tareas li {
+    display: grid;
+    grid-template-columns: 3vw 1.3fr 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background-color: rgba(235, 235, 235, 0.1);
+    border-radius: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.lista-tareas li p {
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    font-weight: 400;
+}
+
+.lista-tareas-numero, .lista-tareas-nombre {
+    border-right: 1px solid rgba(225, 225, 225, 0.3);
+}
+
+/* COMENTARIOS ----------------------------------------------------------------------------------------------------- */
+
+.contenedor-comentarios {
+    grid-area: comentarios;
+    background-color: rgba(62, 74, 100, 0.3);
+    height: 100%;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contenedor-comentarios form {
+    display: grid;
+    grid-template-columns: 9vw 1fr;
+    grid-template-rows: 5vh 5vh;
+    gap: 10px;
+}
+
+.contenedor-comentarios input {
+    background-color: rgba(235, 235, 235, 0.6);
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    color: var(--azul);
+}
+
+.contenedor-comentarios input:focus, textarea:focus {
+    outline: none;
+}
+
+.contenedor-comentarios h3 {
+    color: var(--azul);
+    text-align: center;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+.contenedor-comentarios textarea {
+    background-color: rgba(235, 235, 235, 0.6);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--azul);
+    height: 100%;
+    width: 100%;
+    grid-row: span 2;
+    grid-column: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: vertical;
+}
+
+.contenedor-comentarios button {
+    border: none;
+    color: var(--azul);
+    border-radius: 4px;
+}
+
+.contenedor-comentarios button:hover {
+    background-color: rgba(62, 74, 100, 0.1);
+    color: var(--rojo);
+    border: none;
+}
+
+.comentario {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: block;
+    background-color: rgba(62, 74, 100, 0.1);
+ }
+
+.comentario li {
+    text-decoration: none;
+    display: inline-block; 
+}
+
+.comentario button {
+    display: flex;
+    margin-left: auto;
+    color: var(--azul);
+    background-color: transparent;
+    border: none;
+    font-size: 7pt;
+}
+
+.comentario .nombre {
+    font-weight: 600;
+}
+
+.mensaje-comentario {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+@media (max-width:990px) {
+    .contenedor-admin {
+        grid-template-rows: 50px 0.5fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 37vw;
+        grid-template-areas: ".  ." "Calendario titulo " "Calendario listaTareas" "Calendario listaTareas" "comentarios comentarios";
+        gap: 7px;
+        padding: 20px;
+    }
+    /* COMENTARIOS --------- */
+    .contenedor-comentarios {
+        display: grid;
+        grid-template-columns: 30vw 1fr;
+        gap: 30px;
+    }
+    .contenedor-comentarios form {
+        grid-template-rows: 5vh 10vh;
+    }
+}
+
+@media (max-width:700px) {
+    .contenedor-admin {
+        grid-template-rows: 50px 100px 1.5fr 1fr 0.5fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: ". " "titulo " "Calendario" "listaTareas" "comentarios";
+        gap: 7px;
+        padding: 20px;
+    }
+    /* COMENTARIOS --------- */
+    .contenedor-comentarios {
+        grid-template-columns: 1fr;
+    }
+    .contenedor-comentarios form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 5vh 5vh 8vh 5vh;
+    }
+
+    .contenedor-comentarios textarea {
+        grid-row: 3 span 1;
+        grid-column: 1;
+    }
+
+    /* LISTA TAREAS */
+
+    .lista-tareas li {
+          grid-template-columns: 8vw 1.3fr 1fr;
+  
+    }
+
+    
+}

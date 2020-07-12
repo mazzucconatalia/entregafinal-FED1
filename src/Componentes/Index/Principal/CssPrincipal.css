@@ -1,0 +1,272 @@
+#grid-pantalla-principal {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 90px 2fr 1.3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "aside  principal slider";
+    background-color: var(--rojo);
+}
+
+
+#principal {
+    grid-area: principal;
+    display: grid;
+    grid-template-rows: 0.4fr 1fr 60px;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: ". ." "sobremi ." "email email";
+    background-color: var(--rojo);
+}
+
+.sobremi {
+    grid-area: sobremi;
+    max-width: 400px;
+    padding: 10px;
+    padding-left: 30px;
+    color: white;
+    font-size: 11pt;
+}
+
+.sobremi img {
+    position: absolute;
+    bottom: 0;
+    height: 580px;
+    margin-left: 3vw;
+    opacity: 0.35;
+}
+
+.principal-email {
+    grid-area: email;
+    margin-left: auto;
+    margin-right: 40px;
+    padding-top: 5px;
+    font-size: 12pt;
+}
+
+.principal-email a {
+    text-decoration: none;
+    color: white;
+}
+
+
+#slider {
+    grid-area: slider;
+    z-index: 2;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    animation-name: slider;
+    animation-duration: 20s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-image: url(./slider/Section.jpg);
+}
+
+@keyframes slider {
+    0% {
+        background-image: url(./slider/Section1.jpg);
+    }
+    25% {
+        background-image: url(./slider/Section5.jpg);
+    }
+    50% {
+        background-image: url(./slider/Section2.jpg);
+    }
+    75% {
+        background-image: url(./slider/Section3.jpg);
+    }
+    100% {
+        background-image: url(./slider/Section4.jpg);
+    }
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    background-color: var(--rojo);
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside>ul>li>a>img {
+    height: 30px;
+    margin: 7px;
+}
+
+aside>ul>li>a>img:hover {
+    transform: scale(1.07);
+}
+
+/* CARTEL PRESENTACIÓN --------------------------------------------------------------------------------*/
+
+.presentacion {
+    width: 25em;
+    height: 30em;
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    padding: 50px;
+    z-index: 4;
+    transition: 2s;
+    background-color: var(--azul);
+    color: white;
+    box-shadow: 14px 16px 59px -4px rgba(32, 38, 61, 0.61);
+}
+
+.presentacion h1 {
+    font-size: 35pt;
+    line-height: 36pt;
+}
+
+.presentacion p {
+    padding-top: 23px;
+    color: var(--amarillo);
+    font-size: 14pt;
+    line-height: 15pt;
+}
+
+.boton-flecha img {
+    width: 23%;
+    padding-top: 15px;
+}
+
+.boton-flecha a:hover {
+    padding-left: 5px;
+}
+
+@media (max-width:840px) {
+
+#grid-pantalla-principal {
+    grid-template-columns: 70px 2fr 1.3fr;
+}
+.fondo-principal {
+    display: none;
+}
+.presentacion {
+    width: 20em;
+    height: 28em;
+    top: 20%;
+    left: 52%;
+    padding: 40px;
+}
+.presentacion h1 {
+    font-size: 32pt;
+    line-height: 33pt;
+}
+.presentacion p {
+    padding-top: 19px;
+    font-size: 13pt;
+}
+aside {
+    padding-left: 20px;
+}
+
+}
+
+
+
+@media (max-width:660px) {
+
+#grid-pantalla-principal {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 0.4fr 1fr 60px;
+    grid-template-areas: ". ." "slider slider" "principal fondo-color" "principal aside";
+}
+#principal {
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "sobremi" "email";
+    padding-top: 15px;
+}
+.presentacion {
+    width: 18em;
+    height: 27em;
+    top: 28%;
+    left: 50%;
+    padding: 30px;
+    padding-top: 90px;
+}
+.presentacion h1 {
+    font-size: 25pt;
+    line-height: 26pt;
+}
+.presentacion p {
+    font-size: 12pt;
+    line-height: 13pt;
+}
+aside {
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0px;
+    margin-bottom: auto;
+}
+aside>ul>li>a>img {
+    height: 25px;
+    margin: 5px;
+}
+aside>ul>li {
+    display: inline-block;
+}
+.principal-email {
+    margin-right: 0px;
+}
+.fondo-color {
+    grid-area: fondo-color;
+    background-color: var(--rojo);
+}
+}
+
+
+
+@media (max-width:480px) {
+
+#grid-pantalla-principal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 1fr;
+    grid-template-areas: "." "slider" "principal";
+}
+#principal {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "sobremi";
+    padding-top: 50px;
+}
+.principal-email {
+    display: none;
+}
+.presentacion {
+    width: 90%;
+    height: 30%;
+    top: 30%;
+    left: 5%;
+    padding: 30px;
+    padding-top: 20px;
+    z-index: 2;
+}
+.presentacion h1 {
+    font-size: 19pt;
+    line-height: 22pt;
+}
+.presentacion p {
+    padding-top: 5px;
+    font-size: 11pt;
+    line-height: 12pt;
+}
+.boton-flecha img {
+    width: 15%;
+    padding-top: 10px;
+}
+aside {
+    display: none;
+}
+.fondo-color {
+    display: none;
+}
+}

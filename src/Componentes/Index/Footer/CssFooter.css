@@ -1,0 +1,26 @@
+footer {
+    min-height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--rojo);
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--amarillo);
+    border-right: solid 1px var(--amarillo);
+}
+
+
+
+
+@media (max-width:660px) {
+footer {
+    grid-template-columns: 1fr 1fr;
+}
+.email-footer {
+    display: none;
+}
+}

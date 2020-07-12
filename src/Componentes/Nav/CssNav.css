@@ -1,0 +1,149 @@
+  .nav-Principal {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 90px 2fr 1.4fr;
+    grid-template-rows: 60px;
+    grid-template-areas: "nav-logo nav-menu nav-redes";
+    background-color: var(--rojo);
+  }
+
+  .nav-logo {
+    grid-area: nav-logo;
+    padding-left: 30px;
+    padding-top: 8px;
+    background-color: var(--rojo);
+  }
+
+  .nav-logo img {
+    width: 3em;
+    display: inline-block;
+  }
+
+  .nav-menu {
+    grid-area: nav-menu;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1.5vh;
+    list-style: none;
+    background-color: var(--rojo);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-menu a:hover {
+    transition: 1s;
+    background-color: var(--azul);
+  }
+
+  .elementos-dropdown-menu {
+    min-width: 108px;
+    position: absolute;
+    background-color: white;
+    font-weight: 600;
+  }
+
+  .elementos-dropdown-menu a {
+    color: var(--rojo);
+    border-bottom: 0.1px solid rgba(169, 94, 93, 0.3);
+  }
+
+  .elementos-dropdown-menu a:hover {
+    background-color: var(--azul);
+    color: var(--amarillo);
+  }
+
+  #boton-desplegable {
+    display: none;
+  }
+
+  .nav-Principal label {
+    display: none;
+    width: 35px;
+    padding: 15px;
+  }
+
+  .nav-redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 15px;
+    padding-right: 60px;
+  }
+
+  .nav-redes>ul>li>a>img {
+    height: 26px;
+    margin-left: 10px;
+  }
+
+  .nav-redes>ul>li {
+    display: inline-block;
+  }
+
+
+  @media (max-width:840px) {
+    .nav-Principal {
+      grid-template-columns: 70px 2fr 1.3fr;
+      padding-right: 1.3em;
+    }
+    .nav-logo {
+      padding-left: 20px;
+    }
+  }
+
+  @media (max-width:660px) {
+    .nav-Principal {
+      grid-template-columns: 70px 2fr;
+      grid-template-rows: 70px;
+      grid-template-areas: "nav-logo nav-menu";
+      z-index: 3;
+    }
+    .nav-redes {
+      display: none;
+    }
+  }
+
+  @media (max-width:480px) {
+    .nav-Principal label {
+      display: block;
+      cursor: pointer;
+    }
+    .nav-menu-contenedor {
+      display: none;
+    }
+    .nav-menu {
+      min-width: 150px;
+      padding-top: 0;
+      position: absolute;
+      top: 3vh;
+      left: 13vw;
+      flex-direction: column;
+      transition: all 0.3s;
+      background-color: white;
+    }
+    .nav-menu a {
+      color: var(--rojo);
+      font-weight: 600;
+      border-bottom: 0.1px solid rgba(169, 94, 93, 0.3);
+    }
+    .nav-menu a:hover {
+      color: white;
+    }
+    .elementos-dropdown-menu {
+      min-width: 110px;
+      background-color: var(--azul);
+    }
+    .elementos-dropdown-menu a {
+      color: var(--amarillo);
+      border-bottom: 0.1px solid rgba(169, 94, 93, 0.3);
+    }
+  }
